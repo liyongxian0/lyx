@@ -1,0 +1,12 @@
+{
+  "src": [
+    "pages/Index",
+    "pages/Loading",
+    "pages/MainPage",
+    "pages/LoginOK",
+    "pages/ForgetPwd",
+
+    "pages/Register"
+  ]
+}
+
