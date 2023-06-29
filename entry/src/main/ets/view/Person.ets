@@ -16,6 +16,7 @@
 import CommonConstants from '../common/constants/CommonConstants';
 import ItemData from '../common/bean/ItemData';
 import mainViewModel from '../viewmodel/MainViewModel';
+import router from '@ohos.router';
 
 /**
  * Setting tab content
@@ -111,6 +112,11 @@ export default struct Setting {
           .fontWeight(FontWeight.Medium)
           .backgroundColor($r('app.color.setting_button_backgroundColor'))
           .margin({ bottom: $r('app.float.setting_button_bottom')})
+          .onClick(()=>{
+            router.pushUrl({
+              url:'pages/Index'
+            })
+          })
       }
       .height(CommonConstants.FULL_PARENT)
     }

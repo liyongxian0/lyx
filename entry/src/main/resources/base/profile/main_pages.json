@@ -5,7 +5,7 @@
     "pages/MainPage",
     "pages/LoginOK",
     "pages/ForgetPwd",
-
+    "pages/test",
     "pages/Register"
   ]
 }

@@ -255,7 +255,11 @@
     {
       "name": "hei_ti",
       "value": "HarmonyHeiTi"
-    }
+    },
 
+    {
+      "name": "register_must_be_11",
+      "value": "请使用11位手机号码注册"
+    }
   ]
 }

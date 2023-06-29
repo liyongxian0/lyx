@@ -21,6 +21,7 @@ import ItemData from '../common/bean/ItemData';
  */
 export class MainViewModel {
 
+
   /**
    * Get swiper image data.
    *

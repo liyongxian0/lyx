@@ -16,17 +16,24 @@
 import CommonConstants from '../common/constants/CommonConstants';
 import mainViewModel from '../viewmodel/MainViewModel';
 import ItemData from '../common/bean/ItemData';
+import router from '@ohos.router';
 
 /**
  * Home tab content
  */
+//@Entry
 @Component
 export default struct Home {
+  controller: SearchController = new SearchController()
   private swiperController: SwiperController = new SwiperController();
+  @State changeValue: string = ''
+  @State submitValue: string = ''
 
   build() {
     Scroll() {
+
       Column({ space: CommonConstants.COMMON_SPACE }) {
+
         Column(){
           Text($r('app.string.mainPage_tabTitles_home'))
             .fontWeight(FontWeight.Medium)
@@ -37,12 +44,28 @@ export default struct Home {
         .width(CommonConstants.FULL_PARENT)
         .alignItems(HorizontalAlign.Start)
 
+        Search({ value: this.changeValue, placeholder: 'Type to search...', controller: this.controller })
+          .searchButton('搜索')
+          .width(400)
+          .height(40)
+          .backgroundColor('#F5F5F5')
+          .placeholderColor(Color.Grey)
+          .placeholderFont({ size: 14, weight: 400 })
+          .textFont({ size: 14, weight: 400 })
+          //.margin(20)
+          .width('90%')
+          .onSubmit(()=>{
+          router.pushUrl({
+            url:"pages/test"
+          })
+        }
+        )
         Swiper(this.swiperController) {
           ForEach(mainViewModel.getSwiperImages(), (img: Resource) => {
             Image(img).borderRadius($r('app.float.home_swiper_borderRadius'))
           }, img => img.id)
         }
-        .margin({ top: $r('app.float.home_swiper_margin') })
+        //.margin({ top: $r('app.float.home_swiper_margin') })
         .autoPlay(true)
 
         Grid() {
